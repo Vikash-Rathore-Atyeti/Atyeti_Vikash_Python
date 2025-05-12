@@ -1,0 +1,48 @@
+REST Basics: Understand HTTP methods.
+
+Consuming APIs: Using requests to fetch data.
+
+Flask API: Create routes, handle JSON.
+
+CRUD: Implement GET, POST, PUT, DELETE.
+
+Error Handling: Handle HTTP errors.
+
+FastAPI (Optional): Async API framework.
+
+# GET     -> Retrieve data
+# POST    -> Create new data
+# PUT     -> Replace existing data (if want to update all parameters of object )
+# DELETE  -> Delete data
+# PATCH   -> Update part of resource (for single field)
+
+install libraries using requirement.txt
+pip install -r requirements.txt
+
+
+--Flask
+-micro framework for small scale appllication provides all HTTP methods (get,post,put ,delelte,patch)
+-does not have inbuild data validation
+-it uses custom error handlers which are define by user, (HTML pages to show the errors)
+-does not support async task
+
+--FastAPI
+- this specifically use to create RESTful API's (currenly microsof,uber using this)
+- it follows REST architechture so by default it provides below features
+    - security - like validation and sanitization of user input , no session tracking
+    -Scalibility -
+    -automatic data validation- pydantic models which help to validate request and response
+    -support aysc and sync support - fastAPI Asynchronous Server Gateway Interface( standard interface between Python web applications and asynchronous web servers.) support async task, it can handle large volume of concurrent request
+    -for error handling it uses pydantic models which genrate user friendly error message in json format
+    - no need do asynch await management
+
+    To get this aysnc request hadnling feature we use library - uvicorn
+
+  -TO RUN OR UP THE REST API'S
+    uvicorn app_fastapi:app_fastapi --reload
+            .py file name : app name (declare in file)
+            Auto-reloads app on code changes (use --reload)
+
+
+
+
