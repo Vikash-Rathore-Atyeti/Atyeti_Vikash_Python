@@ -8,7 +8,6 @@ def add_book(book_id, title, author, price, quantity):
         'price': price,
         'quantity': quantity
     }
-
 def remove_book(book_id):
     return inventory.pop(book_id, None)
 
