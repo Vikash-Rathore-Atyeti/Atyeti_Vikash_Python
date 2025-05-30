@@ -1,0 +1,27 @@
+{
+  "file_name": "log2.txt",
+  "date_of_creation": "20250530103348",
+  "log_levels": {
+    "info": {
+      "messages": [
+        "[AuthService] - Password reset requested for user: charlie",
+        "[NotificationService] - SMS sent to user: dave@example.com"
+      ],
+      "count": 2
+    },
+    "error": {
+      "messages": [
+        "[OrderService] - Failed to process order 789014: payment timeout",
+        "[InventoryService] - Inventory update failed for product: SKU-5678"
+      ],
+      "count": 2
+    },
+    "warn": {
+      "messages": [
+        "[CacheManager] - Cache miss for key: session-789",
+        "[PaymentGateway] - High latency detected in payment processing"
+      ],
+      "count": 2
+    }
+  }
+}

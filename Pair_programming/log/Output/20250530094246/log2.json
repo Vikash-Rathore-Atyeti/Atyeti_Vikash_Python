@@ -1,0 +1,18 @@
+{
+  "file_name": "log2.txt",
+  "date_of_creation": "20250530094246",
+  "log_levels": {
+    "info": {
+      "messages": [],
+      "count": 0
+    },
+    "error": {
+      "messages": [],
+      "count": 0
+    },
+    "warning": {
+      "messages": [],
+      "count": 0
+    }
+  }
+}

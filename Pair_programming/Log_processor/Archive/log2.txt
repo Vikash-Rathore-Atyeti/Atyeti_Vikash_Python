@@ -1,0 +1,8 @@
+log2.txt,20250528
+2025-05-21 10:05:12 INFO  [AuthService] - Password reset requested for user: charlie
+2025-05-21 10:06:25 WARNING  [CacheManager] - Cache miss for key: session-789
+2025-05-21 10:07:38 ERROR  [OrderService] - Failed to process order 789014: payment timeout
+2025-05-21 10:08:50 INFO  [NotificationService] - SMS sent to user: dave@example.com
+2025-05-21 10:09:55 WARNING  [PaymentGateway] - High latency detected in payment processing
+2025-05-21 10:10:10 ERROR  [InventoryService] - Inventory update failed for product: SKU-5678
+6

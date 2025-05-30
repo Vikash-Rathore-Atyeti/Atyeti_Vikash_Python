@@ -1,0 +1,27 @@
+{
+  "file_name": "log3.txt",
+  "date_of_creation": "20250530103349",
+  "log_levels": {
+    "info": {
+      "messages": [
+        "[UserService] - User profile updated: eve",
+        "[OrderService] - Order 89015 shipped"
+      ],
+      "count": 2
+    },
+    "error": {
+      "messages": [
+        "[DatabaseConnector] - Query execution failed: syntax error",
+        "[PaymentProcessor] - Refund processing error for transactio 789016"
+      ],
+      "count": 2
+    },
+    "warn": {
+      "messages": [
+        "[EmailService] - Email queue backlog detected",
+        "[AuthService] - Multiple failed login attempts for user: frank"
+      ],
+      "count": 2
+    }
+  }
+}
