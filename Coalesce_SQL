@@ -1,0 +1,19 @@
+create table employees(
+	id serial primary key,
+	name varchar(255),
+	salary numeric(10,2),
+	dept varchar(255)
+);
+
+insert into employees ( name, salary, dept) 
+values
+	('vikas', 70000.00, 'IT'),
+	('Anup', NULL,'IT'),
+	('Harshit', 65000.00, NULL);
+
+select * from employees;
+
+select id, name,
+	coalesce(salary, 0) as true_salary,
+	coalesce(dept,'unassigned')
+	from employees;
