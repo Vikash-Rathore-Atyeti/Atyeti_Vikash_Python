@@ -1,0 +1,54 @@
+--Arrays
+select * from array_table
+where array[1,2,3,4]::Integer[] = myarray;
+
+select id, unnest(myarray) as unnested
+from array_table;
+
+create table job_board(
+	id serial primary key,
+	job text,
+	salary numeric,
+	salary_numrange numrange,
+	salary_intrange int4range
+);
+
+insert into job_board (job,salary,salary_numrange,salary_intrange)
+values
+	('Engineer I', 120000, numrange(95000, 130000), int4range(95000, 130000)),
+	('Engineer II', 150000, numrange(135000, 170000), int4range(95000, 130000)),
+	('Engineer III', 210000, numrange(185000, 250000), int4range(95000, 130000));
+
+select * from job_board;
+
+SELECT *
+FROM job_board
+WHERE salary_numrange @> 95000:: numeric;
+
+create table customers(
+	id serial primary key,
+	name text,
+	address jsonb
+)
+
+insert into customers(name, address) 
+	values ('Vikas Rathore','{"street": "123 main st", "city": "Indore", "state":"MP", "zip":"450033"}');
+
+select address->>'street' as street, address->>'City' as city,address->>'state' as state, address->>'zip' as zip
+from customers 
+where name = 'Vikas Rathore';
+
+create index idx_customers_address_city on customers ((address->>'city'));
+
+select name 
+from customers 
+where address->>'City' = 'Indore';
+
+update customers 
+set address = jsonb_set(address, '{City}', '"Dewas"')
+where name  = 'Vikas Rathore';
+
+select * from customers;
+
+
+
