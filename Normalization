@@ -1,0 +1,28 @@
+create table class1(
+	id serial,
+	adviser varchar,
+	room varchar,
+	class1 varchar,
+	class2 varchar
+);
+
+insert into class1(
+	adviser, room, class1, class2
+)
+values
+	('Vicks', 123 , 'Chem', 'Math'),
+	('chetan', 124 , 'phy', 'Math'),
+	('Vishal', 121 , 'Chem', 'sci')
+	
+select * from class1;
+
+#1nf
+
+select c.id, c.adviser,t.*
+from class1 c
+cross join lateral(
+	values(c.class1, 'class1'),
+		  (c.class1, 'class1') 
+	)as t (subject, class_num)
+order by id;
+
