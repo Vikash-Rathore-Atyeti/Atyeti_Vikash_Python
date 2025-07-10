@@ -1,0 +1,30 @@
+create table orders(
+	order_id serial primary key,
+	customer_id integer not null,
+	order_date date not null,
+	order_total decimal(10,2) not null
+);
+
+insert into orders (customer_id, order_date, order_total)
+	values
+	(1,'2025-06-01',100.00),
+	(3,'2025-06-02',10.00),
+	(1,'2025-06-03',1500.00),
+	(5,'2025-06-04',1020.00),
+	(4,'2025-06-05',10066.00)
+	
+select * from orders;
+
+select order_id, customer_id, order_date, order_total,
+sum(order_total) over (order by order_date) as running_sum,
+sum(order_total) over (partition by customer_id order by order_date) running_per_cutomer_sum
+from orders as o
+order by customer_id, order_date;
+
+with temp as(
+select order_id, customer_id, order_date, order_total,
+max(order_total) over (partition by customer_id) max_order_total
+from orders o
+)
+select * from temp
+where order_total = max_order_total;
