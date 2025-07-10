@@ -1,0 +1,31 @@
+create table employees1(
+	id serial primary key,
+	name varchar(255),
+	salary numeric(10,2),
+	dept varchar(255)
+);
+
+insert into employees1 ( name, salary, dept) 
+values
+	('vikas', 70000.00, 'IT'),
+	('Anup', 500000,'IT'),
+	('Harshit', 65000.00, 'Vela');
+
+select * from employees1;
+
+create or replace procedure insert_employee(
+	p_name varchar,
+	p_salary numeric(10,2),
+	p_dept varchar
+)
+language plpgsql
+as $$
+begin
+		insert into employees1(name, salary, dept)
+		values(p_name, p_salary, p_dept);
+end;
+$$;
+
+select * from employees1;
+
+call insert_employee('pranav', 79000.00, 'IT');
