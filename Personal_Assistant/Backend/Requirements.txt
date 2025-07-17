@@ -1,0 +1,17 @@
+python-dotenv
+groq
+AppOpener
+pywhatkit
+bs4
+pillow
+rich
+requests
+keyboard
+cohere
+selenium
+mtranslate
+pygame
+PyQt5
+webdriver-manager
+googlesearch-python
+edge-tts
